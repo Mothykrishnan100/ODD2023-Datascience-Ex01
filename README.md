@@ -130,4 +130,5 @@ To read a given dataset and remove outliers and save a new dataframe.
 ![310218959-e23d7d25-399e-4d85-aa06-0d2845e7dbc2](https://github.com/Mothykrishnan100/ODD2023-Datascience-Ex01/assets/160512502/d3414cc1-7d2e-4261-886a-f8e23854e7bf)
 ![Screenshot 2024-03-07 094529](https://github.com/Mothykrishnan100/ODD2023-Datascience-Ex01/assets/160512502/c1d105e1-5e56-433d-b0aa-9c0a78dcea7f)
 ![Screenshot 2024-03-07 094507](https://github.com/Mothykrishnan100/ODD2023-Datascience-Ex01/assets/160512502/b4b7dada-45c3-463a-8380-44df29c1a6fc)
-
+# RESULT
+Thus, the given data is read, cleansed and the cleaned data is saved into the file and the given data is read,remove outliers and save a new dataframe was created and executed successfully.
