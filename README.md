@@ -62,6 +62,70 @@ Save the Clean data to the file
 ![310215858-3e2460b2-dd85-45e6-9946-844b2fecce78 (1)](https://github.com/Mothykrishnan100/ODD2023-Datascience-Ex01/assets/160512502/438fb7af-7f26-4d14-bb23-ebc63f0a3b69)
 ![310215858-3e2460b2-dd85-45e6-9946-844b2fecce78](https://github.com/Mothykrishnan100/ODD2023-Datascience-Ex01/assets/160512502/3ad59f36-b6d9-4a6f-9200-8f7220ba5183)
 
+# 2)Outlier Detection and Removal
 
+# AIM
+To read a given dataset and remove outliers and save a new dataframe.
 
-   
+# ALGORITHM:
+(1) Remove outliers using IQR
+
+(2) After removing outliers in step 1, you get a new dataframe.
+
+(3) use zscore of 3 to remove outliers. This is quite similar to IQR and you will get exact same result
+
+(4) for the data set height_weight.csv find the following
+
+(i) Using IQR detect weight outliers and print them
+
+(ii) Using IQR, detect height outliers and print them
+
+# PROGRAM
+      import pandas as pd
+      import numpy as np
+      import seaborn as sns
+      import pandas as pd
+      from scipy import stats
+      df = pd.read_csv("/content/heights.csv")
+      sns.boxplot(data=df)
+      sns.scatterplot(data=df)
+      max =df['height'].quantile(0.90)
+      min =df['height'].quantile(0.15)
+      max
+      min
+      dq = df[((df['height']>=min)&(df['height']<=max))]
+      dq
+      low = min-1.5*iqr
+      high = max+1.5*iqr
+      dq = df[((df['height']>=min)&(df['height']<=max))]
+      dq
+
+# ZSCORE:
+      import pandas as pd
+      import numpy as np
+      import seaborn as sns
+      import pandas as pd
+      from scipy import stats
+      data = {'weight':[12,15,18,21,24,27,30,33,36,39,42,45,48,51,54,57,60,63,66,69,202,72,75,78,81,84,232,87,90,93,96,99,258]}
+      df = pd.DataFrame(data)
+      df
+      sns.boxplot(data=df)
+      z = np.abs(stats.zscore(df))
+      print(df[z['weight']>3])
+      val =[12,15,18,21,24,27,30,33,36,39,42,45,48,51,54,57,60,63,66,69,202,72,75,78,81,84,232,87,90,93,96,99,258]
+      out=[]
+      def d_o(val):
+      ts=3
+      m=np.mean(val)
+      sd=np.std(val)    
+      for i in val:
+      z=(i-m)/sd
+      if np.abs(z)>ts:
+      out.append(i)
+      return out
+      op = d_o(val)
+      op
+
+# OUTPUT
+![310218959-e23d7d25-399e-4d85-aa06-0d2845e7dbc2](https://github.com/Mothykrishnan100/ODD2023-Datascience-Ex01/assets/160512502/d3414cc1-7d2e-4261-886a-f8e23854e7bf)
+
